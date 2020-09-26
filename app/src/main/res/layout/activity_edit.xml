@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp">
+
+            <ImageView
+                android:id="@+id/img_ic_money"
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"
+                android:layout_marginStart="0dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:src="@mipmap/ic_edit_act" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"
+                android:layout_toEndOf="@+id/img_ic_money">
+
+                <TextView
+                    android:id="@+id/txt_judul"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Ngedit Kas"
+                    android:textColor="#ffffff"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/logo" />
+        </RelativeLayout>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:alignmentMode="alignMargins"
+            android:columnCount="1"
+            android:columnOrderPreserved="false"
+            android:rowCount="3">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="Jenis Kasnya Apa ?"
+                        android:textColor="@color/colorDarkText"
+                        android:textSize="14sp" />
+                    <RadioGroup
+                        android:id="@+id/radio_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:padding="10dp"
+                        android:orientation="horizontal"
+                        android:layout_below="@+id/title">
+
+                        <RadioButton
+                            android:id="@+id/radio_kas_type_masuk"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".335"
+                            android:background="@drawable/radio_states_green"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Masuk"
+                            android:textColor="@drawable/radio_text"
+                            android:textSize="14sp" />
+
+                        <RadioButton
+                            android:id="@+id/radio_kas_type_keluar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight=".335"
+                            android:background="@drawable/radio_states_red"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Keluar"
+                            android:textColor="@drawable/radio_text"
+                            android:textSize="14sp" />
+                    </RadioGroup>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/text_keluar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="Masukan data kas dulu yah"
+                        android:textColor="@color/colorDarkText"
+                        android:textSize="14sp" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp">
+
+                        <EditText
+                            android:id="@+id/edit_kas_total"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/edit_text_style"
+                            android:hint="Rp. "
+                            android:inputType="number"
+                            android:padding="14dp"
+                            android:textColor="@color/colorDarkText"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="47dp"
+                            android:layout_alignParentRight="true"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:src="@mipmap/ic_amount" />
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp">
+
+                        <EditText
+                            android:id="@+id/edit_kas_info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/edit_text_style"
+                            android:gravity="top|left"
+                            android:hint="Keterangan"
+                            android:maxLines="10"
+                            android:minLines="5"
+                            android:padding="14dp"
+                            android:textColor="@color/colorDarkText"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="47dp"
+                            android:layout_alignParentRight="true"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:src="@mipmap/ic_info" />
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp">
+
+                        <EditText
+                            android:id="@+id/edit_tanggal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/edit_text_style"
+                            android:focusable="false"
+                            android:hint="Tanggal"
+                            android:padding="14dp"
+                            android:textColor="@color/colorDarkText"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="47dp"
+                            android:layout_alignParentRight="true"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:src="@mipmap/ic_calendar" />
+                    </RelativeLayout>
+
+                    <com.andexert.library.RippleView
+                        android:id="@+id/rip_simpan"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp">
+                            <Button
+                                android:id="@+id/btn_simpan"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="50dp"
+                                android:paddingRight="50dp"
+                                android:background="@drawable/button_bg"
+                                android:layout_alignParentRight="true"
+                                android:text="SIMPAN PERUBAHAN"
+                                android:textColor="@android:color/white" />
+                        </RelativeLayout>
+                    </com.andexert.library.RippleView>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+        </GridLayout>
+
+    </LinearLayout>
+
+    </ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
